@@ -14,8 +14,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: '保存できました'
     else
+      flash.now[:error] = '保存に失敗しました'
       render :new
     end
   end
