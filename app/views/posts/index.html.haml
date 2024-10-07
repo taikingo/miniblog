@@ -1,2 +1,11 @@
-= @posts.each do |post|
-  %p= post.content
+.container
+  - @posts.each do |post|
+    = link_to post_path(post) do
+      .card.mb-3
+        .card-body
+          = post.content
+
+  .d-flex.justify-content-end
+    = link_to new_post_path do
+      .btn.btn-primary
+        .fw-bold 新規作成
