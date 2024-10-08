@@ -1,13 +1,1 @@
-.container
-  %ul
-    - @post.errors.full_messages.each do |message|
-      %li
-        = message
-  = form_with(model: @post, url: posts_path, method: 'post', local: true) do |f|
-    %div
-      = f.text_area :content, class: 'form-control'
-    .d-flex.justify-content-end.mt-3
-      = link_to :back do
-        .btn.btn-secondly.me-3
-          %p 戻る
-      = f.submit '保存', class: 'btn btn-primary'
+= render 'form', post: @post
