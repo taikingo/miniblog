@@ -1,0 +1,10 @@
+.container
+  %ul
+    - @post.errors.full_messages.each do |message|
+      %li
+        = message
+  = form_with(model: @post, url: post_path(@post), method: 'put', local: true) do |f|
+    %div
+      = f.text_area :content, class: 'form-control'
+    .d-flex.justify-content-end
+      = f.submit '保存', class: 'btn btn-primary mt-3'

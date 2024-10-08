@@ -1,4 +1,9 @@
 .container
-  .card
+  .card.mb-3
     .card-body
       = @post.content
+
+  .d-flex.justify-content-end
+    = link_to edit_post_path(@post) do
+      .btn.btn-primary
+        %div 編集
