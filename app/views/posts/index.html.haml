@@ -1,4 +1,5 @@
 .container
+  %h5.mb-3 全体タイムライン
   - @posts.each do |post|
     = link_to post_path(post) do
       .card.mb-3
