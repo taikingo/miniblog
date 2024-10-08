@@ -1,7 +1,10 @@
 .container
   .card.mb-3
     .card-body
-      = @post.content
+      %p
+        = @post.content
+      %p
+        = @post.display_created_at
 
   .d-flex.justify-content-end
     = link_to edit_post_path(@post) do
