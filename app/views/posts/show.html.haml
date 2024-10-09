@@ -10,7 +10,7 @@
     = link_to :back do
       .btn.btn-secondly
         %p 戻る
-    - if user_signed_in?
+    - if user_signed_in? && current_user.has_written?(@post)
       = link_to edit_post_path(@post) do
         .btn.btn-primary.me-3.ms-3
           %p 編集
