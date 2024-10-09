@@ -8,11 +8,12 @@
 
   .d-flex.justify-content-end
     = link_to :back do
-      .btn.btn-secondly.me-3
+      .btn.btn-secondly
         %p 戻る
-    = link_to edit_post_path(@post) do
-      .btn.btn-primary.me-3
-        %p 編集
-    = link_to post_path(@post), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } do
-      .btn.btn-danger
-        %p 削除
+    - if user_signed_in?
+      = link_to edit_post_path(@post) do
+        .btn.btn-primary.me-3.ms-3
+          %p 編集
+      = link_to post_path(@post), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } do
+        .btn.btn-danger
+          %p 削除

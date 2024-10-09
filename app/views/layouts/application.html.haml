@@ -13,7 +13,17 @@
       .container-fluid
         = link_to root_path do
           .navbar-brand MiniBlog
-        %p ログイン
+        - if user_signed_in?
+          .dropdown
+            .dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", type: "button"}
+              = image_tag 'default-avatar.png', class: 'default-avatar'
+            %ul.dropdown-menu.dropdown-menu-end
+              %li.text-center
+                プロフィール
+              %li.text-center
+                = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+        - else
+          = link_to 'ログイン', new_user_session_path, class: 'btn btn-primary'
     - if flash.present?
       .flash
         - flash.each do |key, value|
