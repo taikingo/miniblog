@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def has_written?(post)
     posts.exists?(id: post.id)
   end
+
+  def prepare_profile
+    profile || build_profile
+  end
 end

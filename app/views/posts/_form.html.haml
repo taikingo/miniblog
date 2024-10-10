@@ -3,6 +3,7 @@
     - @post.errors.full_messages.each do |message|
       %li
         = message
+  %h5.mb-3 投稿内容(140字以内)
   = form_with(model: @post, local: true) do |f|
     %div
       = f.text_area :content, class: 'form-control'
