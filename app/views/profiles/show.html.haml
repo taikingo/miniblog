@@ -1,0 +1,29 @@
+.container
+  %h5.mb-3 公開情報
+  %table.table.table-bordered
+    %tbody
+      %tr.text-center
+        %th ニックネーム
+        %td
+          - if @profile.present?
+            = current_user.profile.nickname
+      %tr.text-center
+        %th プロフィール
+        %td
+          - if @profile.present?
+            = current_user.profile.introduction
+      %tr.text-center
+        %th ブログURL
+        %td
+          - if @profile.present?
+            = current_user.profile.blogurl
+  .d-flex.justify-content-end
+    = link_to :back do
+      .btn.btn-secondly.me-3
+        %p 戻る
+    = link_to edit_profile_path do
+      .btn.btn-primary
+        %p 編集
+  %h5.mb-3 記事一覧
+  - current_user.posts.each do |post|
+    = render 'commons/post', post: post

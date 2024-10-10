@@ -11,6 +11,7 @@ import "channels"
 import "bootstrap";
 import "../stylesheets/application.scss";
 import "../stylesheets/flash.scss";
+import "../stylesheets/table.scss";
 
 Rails.start()
 Turbolinks.start()

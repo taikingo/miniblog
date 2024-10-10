@@ -1,13 +1,7 @@
 .container
   %h5.mb-3 全体タイムライン
   - @posts.each do |post|
-    = link_to post_path(post) do
-      .card.mb-3
-        .card-body
-          %p
-            = post.content
-          %p
-            = post.display_created_at
+    = render 'commons/post', post: post
 
   .d-flex.justify-content-end
     = link_to new_post_path do

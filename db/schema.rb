@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2024_10_10_050706) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "nickname", null: false
+    t.string "nickname"
     t.text "introduction"
     t.string "blogurl"
     t.datetime "created_at", precision: 6, null: false
