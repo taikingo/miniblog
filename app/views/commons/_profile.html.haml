@@ -1,0 +1,18 @@
+%h5.mb-3 公開情報
+%table.table.table-bordered
+  %tbody
+    %tr.text-center
+      %th ユーザー名
+      %td
+        - if @profile.present?
+          = user.profile.nickname
+    %tr.text-center
+      %th プロフィール
+      %td
+        - if @profile.present?
+          = user.profile.introduction
+    %tr.text-center
+      %th ブログURL
+      %td
+        - if @profile.present?
+          = user.profile.blogurl
