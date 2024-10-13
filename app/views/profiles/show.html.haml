@@ -1,22 +1,5 @@
 .container
-  %h5.mb-3 公開情報
-  %table.table.table-bordered
-    %tbody
-      %tr.text-center
-        %th ユーザー名
-        %td
-          - if @profile.present?
-            = current_user.profile.nickname
-      %tr.text-center
-        %th プロフィール
-        %td
-          - if @profile.present?
-            = current_user.profile.introduction
-      %tr.text-center
-        %th ブログURL
-        %td
-          - if @profile.present?
-            = current_user.profile.blogurl
+  = render 'commons/profile', user: current_user
   .d-flex.justify-content-end
     = link_to :back do
       .btn.btn-secondly.me-3

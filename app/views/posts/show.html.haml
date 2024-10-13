@@ -5,6 +5,10 @@
         = @post.content
       %p
         = @post.display_created_at
+      %p.mt-3
+        = link_to account_path(@post.user) do
+          = image_tag 'default-avatar.png', class: 'default-avatar'
+          = @post.auther_name
 
   .d-flex.justify-content-end
     = link_to :back do

@@ -1,0 +1,22 @@
+.container
+  = render 'commons/profile', user: @user
+  .d-flex.justify-content-end
+    = link_to :back do
+      .btn.btn-secondly.me-3
+        %p 戻る
+    - if @user == current_user
+      = link_to edit_profile_path do
+        .btn.btn-primary
+          %p 編集
+    - else
+      - if current_user&.has_followed?(@user)
+        = link_to account_unfollows_path(@user), data: {method: 'post'} do
+          .btn.btn-primary
+            %p フォローを解除
+      - else
+        = link_to account_follows_path(@user), data: {method: 'post'} do
+          .btn.btn-primary
+            %p フォロー
+  %h5.mb-3 記事一覧
+  - @user.posts.each do |post|
+    = render 'commons/post', post: post
