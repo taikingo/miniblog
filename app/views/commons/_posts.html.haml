@@ -1,0 +1,8 @@
+%ul.nav.nav-tabs.justify-content-center.mb-3
+  %li.nav-item.me-5
+  = link_to '新着記事一覧', root_path, class: "nav-link #{add_active_class(root_path)}"
+  %li.nav-item
+    = link_to 'タイムライン', timeline_path, class: "nav-link #{add_active_class(timeline_path)}"
+
+- @posts.each do |post|
+  = render 'commons/post', post: post
