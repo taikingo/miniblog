@@ -4,15 +4,15 @@
     %tr.text-center
       %th ユーザー名
       %td
-        - if @profile.present?
+        - if user.profile.present?
           = user.profile.nickname
     %tr.text-center
       %th プロフィール
       %td
-        - if @profile.present?
+        - if user.profile.present?
           = user.profile.introduction
     %tr.text-center
       %th ブログURL
       %td
-        - if @profile.present?
+        - if user.profile.present?
           = user.profile.blogurl

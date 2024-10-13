@@ -1,7 +1,5 @@
 .container
-  %h5.mb-3 全体タイムライン
-  - @posts.each do |post|
-    = render 'commons/post', post: post
+  = render 'commons/posts'
 
   .d-flex.justify-content-end
     = link_to new_post_path do
